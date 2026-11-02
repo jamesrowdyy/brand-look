@@ -154,7 +154,9 @@ def summarise(raw: dict) -> dict:
 
     # strongest text = highest contrast with the page among common text colours
     strong = max(ranked_text[:6] or [body_text], key=lambda h: contrast(hexrgb(h), page_bg))
-    muted = [h for h in ranked_text if h != strong and saturation(hexrgb(h)) < 0.25]
+    # secondary text must be readable on the page (skips white-on-dark-button labels on light sites)
+    muted = [h for h in ranked_text if h != strong and saturation(hexrgb(h)) < 0.25
+             and contrast(hexrgb(h), page_bg) >= 2.5]
     text_mid = muted[0] if muted else body_text
     text_faint = muted[1] if len(muted) > 1 else text_mid
 
@@ -194,7 +196,8 @@ def summarise(raw: dict) -> dict:
     button_fill = fills.most_common(1)[0][0] if fills else accent
 
     borders = Counter(to_hex(parse_rgb(c)) for c in raw["borders"] if parse_rgb(c) and parse_rgb(c)[3] > 0.05)
-    line = next((h for h, _ in borders.most_common(6) if saturation(hexrgb(h)) < 0.2 and h != strong), None)
+    line = next((h for h, _ in borders.most_common(10) if saturation(hexrgb(h)) < 0.2 and h != strong
+                 and 1.05 < contrast(hexrgb(h), page_bg) < 4), None)
 
     fonts = Counter()
     for stack, n in raw["fonts"]:

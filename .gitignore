@@ -2,3 +2,4 @@
 looks/
 __pycache__/
 *.egg-info/
+docs/social/
