@@ -1,5 +1,7 @@
 # Brand Look
 
+![Brand Look: make your AI design like Stripe, Linear or Notion](docs/img/hero.jpg)
+
 **Make your AI agent design in your brand, not in generic AI grey.**
 
 **New to this?** Get the step-by-step setup and the copy-paste AI prompt at [jamesrowdy.com/tools/brand-look](https://jamesrowdy.com/tools/brand-look/?utm_source=github&utm_medium=readme&utm_campaign=brand-look).
@@ -14,6 +16,8 @@ Brand Look fixes the guess. Give it any website. It opens the site in a real bro
 
 No account, no API key, no cost.
 
+<p align="center"><img src="docs/img/demo.gif" width="420" alt="The same page built in the Stripe, Linear, Notion and Vercel looks"></p>
+
 ## What you actually get
 
 Real runs, 2 Nov 2026, about 3 to 10 seconds each:
@@ -25,6 +29,7 @@ Real runs, 2 Nov 2026, about 3 to 10 seconds each:
 | linear.app | dark | `#5E69D1` | `#F7F8F8` | Inter Variable | 16px |
 | airbnb.com | light | `#FF385C` | `#222222` | Airbnb Cereal VF | 8px |
 | notion.com | light | `#0075DE` | `#000000` | NotionInter | 8px |
+| vercel.com | light | `#171717` | `#171717` | GeistSans | pill |
 
 ```
 $ brand-look jamesrowdy.com
