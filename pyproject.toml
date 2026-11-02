@@ -1,0 +1,17 @@
+[project]
+name = "brand-look"
+version = "0.1.0"
+description = "Read any website's real colours, fonts and corners, and save them as a look file your AI agent can design with."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["playwright>=1.40"]
+
+[project.scripts]
+brand-look = "brand_look.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["brand_look"]
